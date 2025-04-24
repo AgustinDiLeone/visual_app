@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cosas Feas</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">Atrás</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-photo-list></app-photo-list>
+  <button class="round-button" (click)="sacarFoto()">
+    <img src="/assets/camera.png" alt="Icono" />
+  </button>
+</ion-content>

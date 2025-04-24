@@ -1,0 +1,21 @@
+.alerta-personalizada {
+  animation: zoomIn 0.3s ease-in-out;
+  text-align: center;
+}
+
+.toast-personalizado {
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

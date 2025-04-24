@@ -1,0 +1,82 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+}
+
+.top-text,
+.bottom-text {
+  margin: 20px 0; /* Espacio entre los textos y el logo */
+}
+
+.top-text {
+  margin-bottom: 30px; /* Espacio entre el texto superior y el logo */
+  font-size: 1.5rem; /* Tamaño de fuente para el texto superior */
+  font-weight: 700; /* Peso de la fuente para el texto superior */
+}
+
+.bottom-text {
+  margin-top: 30px; /* Espacio entre el logo y el texto inferior */
+  font-size: 1.2rem; /* Tamaño de fuente para el texto inferior */
+  font-weight: 400; /* Peso de la fuente para el texto inferior */
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 150px; /* Tamaño del logo */
+  height: 150px;
+  border-radius: 20px; /* Esquinas redondeadas */
+  animation: spin 2s ease-in-out;
+}
+
+/* Animación de giro */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* Animaciones del texto */
+.animate-top {
+  animation: fadeDown 1.5s ease-in-out;
+}
+
+.animate-bottom {
+  animation: fadeUp 1.5s ease-in-out;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

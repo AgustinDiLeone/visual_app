@@ -1,0 +1,66 @@
+ion-header {
+  padding-top: 5%;
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color del texto */
+}
+
+ion-toolbar {
+  --background: #007bff; /* Fondo del toolbar */
+  --color: white; /* Color del texto en el toolbar */
+  padding: 10px; /* Espaciado interno */
+}
+
+ion-button {
+  --background: transparent; /* Fondo transparente para el botón */
+  --color: white; /* Color del texto del botón */
+  font-size: 0.9em; /* Tamaño de fuente del botón */
+  display: flex; /* Permitir que el icono y el texto estén alineados */
+  align-items: center; /* Centrar verticalmente */
+}
+
+ion-icon {
+  margin-right: 5px; /* Espaciado entre el icono y el texto */
+  font-size: 20px; /* Aumentar el tamaño del icono para que sea más visible */
+}
+
+ion-title {
+  font-size: 1.5em; /* Tamaño de fuente del título */
+  font-weight: bold; /* Negrita */
+  color: white; /* Asegurarse que el texto sea blanco */
+  flex: 1; /* Ocupa todo el espacio disponible */
+  text-align: center; /* Centrar el título */
+}
+
+ion-content {
+  background-color: #f3e5f5; /* Color de fondo claro para el contenido */
+  display: flex; /* Habilitar flexbox para centrar el FAB */
+  flex-direction: column; /* Para apilar contenido */
+  justify-content: center; /* Centrar verticalmente */
+  height: 100%; /* Ocupa toda la altura */
+}
+
+.content-container {
+  flex: 1; /* Esto permite que el contenido ocupe el espacio restante */
+  display: flex;
+  justify-content: center; /* Centra el contenido en el eje horizontal */
+  align-items: center; /* Centra el contenido en el eje vertical */
+}
+
+ion-fab {
+  position: fixed; /* Posiciona el FAB en la parte inferior */
+  bottom: 16px; /* Margen desde el fondo */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Ajustar el centro */
+  background-color: #007bff; /* Color de fondo del FAB */
+  border-radius: 50%; /* Bordes redondeados para el FAB */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para un efecto de profundidad */
+}
+
+ion-fab ion-button {
+  background-color: transparent; /* Fondo transparente para el botón dentro del FAB */
+}
+
+ion-fab ion-icon {
+  color: white; /* Color del icono dentro del FAB */
+  font-size: 30px; /* Aumentar el tamaño del icono para que sea más visible */
+}

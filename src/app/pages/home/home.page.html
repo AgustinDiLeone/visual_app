@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cosas Lindas/Feas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarSesion()">Salir</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-button class="btn lindo" expand="full" (click)="navegar('lindas')">
+      <img src="assets/cosas_lindas.jpg" alt="Cosas LINDAS" class="btn-image" />
+      <span class="btn-text">Cosas LINDAS del edificio</span>
+    </ion-button>
+    <ion-button class="btn feo" expand="full" (click)="navegar('feas')">
+      <img src="assets/cosas_feas.jpg" alt="Cosas FEAS" class="btn-image" />
+      <span class="btn-text">Cosas FEAS del edificio</span>
+    </ion-button>
+  </div>
+</ion-content>

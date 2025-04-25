@@ -36,6 +36,10 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
+    this.form.patchValue({
+      email: '',
+      password: '',
+    });
   }
   async login() {
     if (this.form.valid) {
@@ -45,6 +49,7 @@ export class LoginComponent implements OnInit {
         const authResponse = await this.authServise.logIn({ email, password });
         if (authResponse.error) throw authResponse.error;
         this.spinner.mostrar();
+        this.form.reset();
         this.util.routerLink('/home');
       } catch (error) {
         console.log(error);

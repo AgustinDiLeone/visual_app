@@ -23,7 +23,7 @@ export class AlertaService {
     this.mensaje$.next(mensaje);
     this.tipo$.next(tipo);
     this.mostrar$.next(true);
-    setTimeout(() => this.ocultar(), 3000); // 3 segundos visible
+    setTimeout(() => this.ocultar(), 2000); // 3 segundos visible
   }
 
   ocultar() {

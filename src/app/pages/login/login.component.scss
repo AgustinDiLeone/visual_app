@@ -1,23 +1,35 @@
+.body {
+  background-image: url("/assets/fondo-login-visual.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .main {
+  background-color: rgba(255, 255, 255, 0.7);
   max-width: 400px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #f9f9f9;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   min-width: 300px; /* Establece un ancho mínimo */
 }
 
 h1 {
   text-align: center;
-  color: #007bff;
+  color: rgb(69, 36, 36);
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  color: #007bff;
+  color: rgb(69, 36, 36);
 }
 
 input[type="email"],
@@ -39,7 +51,7 @@ input[type="password"] {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: rgb(69, 36, 36);
   color: white;
   border: none;
   border-radius: 4px;
@@ -47,7 +59,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: rgb(69, 36, 36);
 }
 
 .button-group {

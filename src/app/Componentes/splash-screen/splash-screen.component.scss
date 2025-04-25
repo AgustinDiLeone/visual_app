@@ -4,8 +4,18 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000; /* Fondo negro */
+  background-color: rgb(178, 120, 120);
   color: #fff; /* Texto blanco */
+  animation: cambiarFondo 2s ease-in-out forwards;
+}
+
+@keyframes cambiarFondo {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: rgb(182, 119, 119);
+  }
 }
 
 .top-text,
@@ -17,12 +27,16 @@
   margin-bottom: 30px; /* Espacio entre el texto superior y el logo */
   font-size: 1.5rem; /* Tamaño de fuente para el texto superior */
   font-weight: 700; /* Peso de la fuente para el texto superior */
+  opacity: 0; /* Inicia con opacidad 0 para aplicar la animación */
+  animation: fadeDown 1.5s ease-in-out 2s forwards; /* Se retrasa hasta después de que el fondo termine */
 }
 
 .bottom-text {
   margin-top: 30px; /* Espacio entre el logo y el texto inferior */
   font-size: 1.2rem; /* Tamaño de fuente para el texto inferior */
   font-weight: 400; /* Peso de la fuente para el texto inferior */
+  opacity: 0; /* Inicia con opacidad 0 para aplicar la animación */
+  animation: fadeUp 1.5s ease-in-out 2.5s forwards; /* Se retrasa un poco más que el texto superior */
 }
 
 .logo-container {
@@ -35,7 +49,8 @@
   width: 150px; /* Tamaño del logo */
   height: 150px;
   border-radius: 20px; /* Esquinas redondeadas */
-  animation: spin 2s ease-in-out;
+  opacity: 0; /* Inicia con opacidad 0 para aplicar la animación */
+  animation: spin 2s ease-in-out 2s forwards; /* Se retrasa para iniciar después del fondo */
 }
 
 /* Animación de giro */
@@ -51,14 +66,6 @@
 }
 
 /* Animaciones del texto */
-.animate-top {
-  animation: fadeDown 1.5s ease-in-out;
-}
-
-.animate-bottom {
-  animation: fadeUp 1.5s ease-in-out;
-}
-
 @keyframes fadeDown {
   0% {
     opacity: 0;

@@ -10,7 +10,6 @@ import {
 } from '@ionic/angular/standalone';
 import { UtilService } from 'src/app/services/util';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { PhotoListComponent } from 'src/app/Componentes/photo-list/photo-list.component';
 
 @Component({
   selector: 'app-feas',
@@ -25,7 +24,6 @@ import { PhotoListComponent } from 'src/app/Componentes/photo-list/photo-list.co
     IonHeader,
     IonToolbar,
     IonTitle,
-    PhotoListComponent,
   ],
 })
 export class FeasComponent implements OnInit {

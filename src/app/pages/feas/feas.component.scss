@@ -1,11 +1,12 @@
 ion-header {
   padding-top: 5%;
-  background-color: #007bff; /* Color de fondo verde */
+  background-color: rgb(125, 49, 49); /* Color de fondo verde */
   color: white; /* Color del texto */
 }
 
 ion-toolbar {
-  --background: #007bff; /* Fondo del toolbar */
+  padding-top: 10%;
+  --background: rgb(125, 49, 49); /* Fondo del toolbar */
   --color: white; /* Color del texto en el toolbar */
 }
 
@@ -29,6 +30,13 @@ ion-button {
 ion-button:hover {
   --background: rgba(255, 255, 255, 0.2); /* Efecto hover */
   --color: #4caf50; /* Cambiar color del texto al hacer hover */
+}
+
+ion-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  background-color: rgb(178, 120, 120);
 }
 .round-button {
   position: fixed;

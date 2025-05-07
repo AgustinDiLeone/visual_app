@@ -25,9 +25,13 @@ export class HomePage {
 
   navegar(eleccion: string) {
     if (eleccion == 'feas') {
+      (document.activeElement as HTMLElement)?.blur();
+
       this.serv.routerLink('/menu/fea');
     }
     if (eleccion == 'lindas') {
+      (document.activeElement as HTMLElement)?.blur();
+
       this.serv.routerLink('/menu/linda');
     }
   }

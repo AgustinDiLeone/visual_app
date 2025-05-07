@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Imágenes {{ tipo === 'linda' ? 'lindas' : 'feas' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="salir()">Atrás</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="image-container">
+    <div
+      *ngFor="let img of imagenes"
+      class="image-item"
+      (click)="handleDoubleTap(img)"
+    >
+      <div class="image-text">{{ img.nombre }} - ❤️ {{ img.likes.length }}</div>
+      <img [src]="img.url" alt="{{ img.nombre }}" class="image" />
+      <ion-icon *ngIf="img.likes.includes(usuarioActual)">❤️</ion-icon>
+    </div>
+  </div>
+</ion-content>

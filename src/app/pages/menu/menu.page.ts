@@ -14,6 +14,9 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { v4 as uuidv4 } from 'uuid';
 import { UtilService } from 'src/app/services/util';
+import { AlertaComponent } from 'src/app/Componentes/alerta/alerta.component';
+import { AlertaService } from 'src/app/services/alerta.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-menu',
@@ -38,7 +41,9 @@ export class MenuPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-    private serv: UtilService
+    private serv: UtilService,
+    private alert: AlertaService,
+    private spinner: SpinnerService
   ) {}
 
   ngOnInit() {
@@ -49,6 +54,7 @@ export class MenuPage implements OnInit {
   }
 
   async irASacarFoto() {
+    this.spinner.mostrarSinTiempo();
     try {
       // 1. Tomar la foto
       const image = await Camera.getPhoto({
@@ -119,18 +125,22 @@ export class MenuPage implements OnInit {
 
       if (insertError) throw insertError;
 
-      alert('¡Foto subida correctamente!');
+      this.spinner.ocultar();
+      this.alert.mostrar('¡Foto subida correctamente!', 'success');
     } catch (err) {
+      this.spinner.ocultar();
       console.error('Error al subir la foto', err);
-      alert('Error al subir la foto');
+      this.alert.mostrar('Error al subir la foto', 'error');
     }
   }
 
   irAListado() {
-    this.router.navigate(['/listado-fotos', this.tipo]);
+    (document.activeElement as HTMLElement)?.blur();
+    this.router.navigate([`/listado/${this.tipo}`]);
   }
 
   irAGraficos() {
+    (document.activeElement as HTMLElement)?.blur();
     this.router.navigate(['/graficos', this.tipo]);
   }
 }

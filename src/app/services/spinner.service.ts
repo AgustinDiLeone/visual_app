@@ -10,6 +10,9 @@ export class SpinnerService {
     this.activo = true;
     setTimeout(() => this.ocultar(), 1500); // Oculta en 3 segundos
   }
+  mostrarSinTiempo() {
+    this.activo = true;
+  }
 
   ocultar() {
     this.activo = false;

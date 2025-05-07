@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Menú - {{ tipo | titlecase }}s</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="atras()">Atrás</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-button class="btn lindo" expand="full" (click)="irASacarFoto()">
+      <img src="assets/camera.png" alt="Sacar Foto" class="btn-image" />
+      <span class="btn-text">Sacar Foto</span>
+    </ion-button>
+
+    <ion-button class="btn lindo" expand="full" (click)="irAListado()">
+      <img
+        src="assets/fondo-login-visual.webp"
+        alt="Ver Listado"
+        class="btn-image"
+      />
+      <span class="btn-text">Ver Listado de Fotos</span>
+    </ion-button>
+
+    <ion-button class="btn lindo" expand="full" (click)="irAGraficos()">
+      <img src="assets/graficos.webp" alt="Ver Gráficos" class="btn-image" />
+      <span class="btn-text">Ver Gráficos</span>
+    </ion-button>
+  </div>
+</ion-content>

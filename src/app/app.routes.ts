@@ -26,4 +26,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/feas/feas.component').then((m) => m.FeasComponent),
   },
+  {
+    path: 'menu/:tipo',
+    loadComponent: () =>
+      import('./pages/menu/menu.page').then((m) => m.MenuPage),
+  },
 ];

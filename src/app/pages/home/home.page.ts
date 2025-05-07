@@ -25,10 +25,10 @@ export class HomePage {
 
   navegar(eleccion: string) {
     if (eleccion == 'feas') {
-      this.serv.routerLink('/feas');
+      this.serv.routerLink('/menu/fea');
     }
     if (eleccion == 'lindas') {
-      this.serv.routerLink('/lindas');
+      this.serv.routerLink('/menu/linda');
     }
   }
 

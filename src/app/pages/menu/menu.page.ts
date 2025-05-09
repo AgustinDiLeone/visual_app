@@ -136,7 +136,7 @@ export class MenuPage implements OnInit {
 
   irAListado() {
     (document.activeElement as HTMLElement)?.blur();
-    this.spinner.mostrar();
+    this.spinner.mostrar(4000);
     this.router.navigate([`/listado/${this.tipo}`]);
   }
 

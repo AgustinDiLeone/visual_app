@@ -12,6 +12,8 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertaService } from 'src/app/services/alerta.service';
+import { SpinnerComponent } from 'src/app/Componentes/spinner/spinner.component';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-listado',
@@ -37,7 +39,8 @@ export class ListadoPage implements OnInit {
     private route: ActivatedRoute,
     private supabase: AuthService,
     private router: Router,
-    private alert: AlertaService
+    private alert: AlertaService,
+    private spinner: SpinnerService
   ) {}
 
   async ngOnInit() {
@@ -45,7 +48,7 @@ export class ListadoPage implements OnInit {
     const user = await this.supabase.getCurrentUser();
     const nombre = user.data.user?.email;
     this.usuarioActual = nombre;
-    this.cargarImagenes();
+    await this.cargarImagenes();
     console.log(`usuario: ${this.usuarioActual}`);
   }
   async cargarImagenes() {

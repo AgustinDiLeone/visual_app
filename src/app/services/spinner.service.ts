@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 export class SpinnerService {
   private activo = false;
 
-  mostrar() {
+  mostrar(tiempo: number = 1500) {
     this.activo = true;
-    setTimeout(() => this.ocultar(), 1500); // Oculta en 3 segundos
+    setTimeout(() => this.ocultar(), tiempo); // Oculta en 3 segundos
   }
   mostrarSinTiempo() {
     this.activo = true;

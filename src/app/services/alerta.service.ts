@@ -19,11 +19,15 @@ export class AlertaService {
     return this.tipo$.asObservable();
   }
 
-  mostrar(mensaje: string, tipo: 'error' | 'success' | 'info' = 'info') {
+  mostrar(
+    mensaje: string,
+    tipo: 'error' | 'success' | 'info' = 'info',
+    segundos: number = 2000
+  ) {
     this.mensaje$.next(mensaje);
     this.tipo$.next(tipo);
     this.mostrar$.next(true);
-    setTimeout(() => this.ocultar(), 2000); // 3 segundos visible
+    setTimeout(() => this.ocultar(), segundos); // 3 segundos visible
   }
 
   ocultar() {

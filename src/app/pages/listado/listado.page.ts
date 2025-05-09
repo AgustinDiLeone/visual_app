@@ -8,10 +8,10 @@ import {
   IonToolbar,
   IonButton,
   IonButtons,
-  IonIcon,
 } from '@ionic/angular/standalone';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { AlertaService } from 'src/app/services/alerta.service';
 
 @Component({
   selector: 'app-listado',
@@ -27,7 +27,6 @@ import { AuthService } from 'src/app/services/auth.service';
     IonButton,
     CommonModule,
     FormsModule,
-    IonIcon,
   ],
 })
 export class ListadoPage implements OnInit {
@@ -37,7 +36,8 @@ export class ListadoPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private supabase: AuthService,
-    private router: Router
+    private router: Router,
+    private alert: AlertaService
   ) {}
 
   async ngOnInit() {
@@ -96,6 +96,10 @@ export class ListadoPage implements OnInit {
       this.actualizarLikesEnSupabase(imagen.id, this.usuarioActual);
     } else {
       console.log(`${this.usuarioActual} ya dio like a esta imagen`);
+      this.alert.mostrar(
+        `${this.usuarioActual} ya dio like a esta imagen`,
+        'error'
+      );
     }
   }
   async actualizarLikesEnSupabase(idImagen: number, usuario: string) {

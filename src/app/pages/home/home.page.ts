@@ -8,6 +8,7 @@ import {
   IonButtons,
 } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/services/auth.service';
+import { SpinnerService } from 'src/app/services/spinner.service';
 import { UtilService } from 'src/app/services/util';
 
 @Component({
@@ -22,16 +23,17 @@ export class HomePage {
   async ngOnInit() {}
   private serv = inject(UtilService);
   private client = inject(AuthService);
+  private spinner = inject(SpinnerService);
 
   navegar(eleccion: string) {
     if (eleccion == 'feas') {
       (document.activeElement as HTMLElement)?.blur();
-
+      this.spinner.mostrar();
       this.serv.routerLink('/menu/fea');
     }
     if (eleccion == 'lindas') {
       (document.activeElement as HTMLElement)?.blur();
-
+      this.spinner.mostrar();
       this.serv.routerLink('/menu/linda');
     }
   }

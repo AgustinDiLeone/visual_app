@@ -1,3 +1,6 @@
+ion-content {
+  --background-color: rgb(178, 120, 120);
+}
 .image-container {
   display: flex;
   flex-direction: column; /* Organiza las imágenes en una sola columna */
@@ -27,4 +30,16 @@
   margin-bottom: 0.2rem;
   color: white;
   font-weight: bold;
+}
+
+.image-item {
+  position: relative; /* Para que el corazón se posicione respecto a este div */
+}
+
+.like-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 32px;
+  pointer-events: none;
 }

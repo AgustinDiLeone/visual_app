@@ -16,7 +16,9 @@
     >
       <div class="image-text">{{ img.nombre }} - ❤️ {{ img.likes.length }}</div>
       <img [src]="img.url" alt="{{ img.nombre }}" class="image" />
-      <ion-icon *ngIf="img.likes.includes(usuarioActual)">❤️</ion-icon>
+      <span class="like-icon">
+        {{ img.likes.includes(usuarioActual) ? '❤️' : '🤍' }}
+      </span>
     </div>
   </div>
 </ion-content>

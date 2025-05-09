@@ -18,6 +18,15 @@ export class AuthService {
       environment.SUPABASE_KEY
     );
   }
+  async obtenerImagenesConLikes() {
+    const { data, error } = await this.supabaseClient
+      .from('imagenes')
+      .select('nombre, tipo, likes');
+
+    if (error) throw error;
+
+    return data;
+  }
 
   logIn(credential: SignInWithPasswordCredentials) {
     return this.supabaseClient.auth.signInWithPassword(credential);

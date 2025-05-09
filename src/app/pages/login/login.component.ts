@@ -40,8 +40,6 @@ export class LoginComponent implements OnInit {
       email: '',
       password: '',
     });
-    this.ingresarAdmin();
-    this.login();
   }
   async login() {
     if (this.form.valid) {

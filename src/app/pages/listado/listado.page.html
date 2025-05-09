@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Imágenes {{ tipo === 'linda' ? 'lindas' : 'feas' }}</ion-title>
+    <ion-title>Imágenes - {{ tipo | titlecase }}s</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="salir()">Atrás</ion-button>
     </ion-buttons>

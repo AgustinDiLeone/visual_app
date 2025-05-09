@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle imágen</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="volver()">Atrás</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="imagen-detalle-content">
+  <div class="image-wrapper">
+    <img [src]="imageUrl" alt="Imagen" class="image-detail" />
+  </div>
+</ion-content>

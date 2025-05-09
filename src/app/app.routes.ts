@@ -17,16 +17,6 @@ export const routes: Routes = [
       import('./pages/home/home.page').then((m) => m.HomePage),
   },
   {
-    path: 'lindas',
-    loadComponent: () =>
-      import('./pages/lindas/lindas.component').then((m) => m.LindasComponent),
-  },
-  {
-    path: 'feas',
-    loadComponent: () =>
-      import('./pages/feas/feas.component').then((m) => m.FeasComponent),
-  },
-  {
     path: 'menu/:tipo',
     loadComponent: () =>
       import('./pages/menu/menu.page').then((m) => m.MenuPage),
@@ -35,5 +25,17 @@ export const routes: Routes = [
     path: 'listado/:tipo',
     loadComponent: () =>
       import('./pages/listado/listado.page').then((m) => m.ListadoPage),
+  },
+  {
+    path: 'graficos/:tipo',
+    loadComponent: () =>
+      import('./pages/graficos/graficos.page').then((m) => m.GraficosPage),
+  },
+  {
+    path: 'imagen-detalle',
+    loadComponent: () =>
+      import('./Componentes/imagen-detalle/imagen-detalle.component').then(
+        (m) => m.ImagenDetalleComponent
+      ),
   },
 ];

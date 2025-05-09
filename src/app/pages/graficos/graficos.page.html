@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gráficos - {{ tipo | titlecase }}s</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="salir()">Atrás</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <div class="image-container">
+    <canvas id="grafico"></canvas>
+  </div>
+</ion-content>

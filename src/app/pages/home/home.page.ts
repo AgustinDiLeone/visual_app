@@ -20,10 +20,12 @@ import { UtilService } from 'src/app/services/util';
 })
 export class HomePage {
   constructor() {}
-  async ngOnInit() {}
+
   private serv = inject(UtilService);
   private client = inject(AuthService);
   private spinner = inject(SpinnerService);
+
+  ngOnInit(): void {}
 
   navegar(eleccion: string) {
     if (eleccion == 'feas') {

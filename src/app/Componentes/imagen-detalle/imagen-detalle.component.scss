@@ -1,0 +1,33 @@
+.imagen-detalle-content {
+  --background: transparent /* Fondo translúcido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  height: 100%;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Esto permite que la imagen ocupe la mayoría de la pantalla */
+  margin-top: 20%;
+}
+
+.image-detail {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.volver-button {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  max-width: 300px;
+  margin: 0 auto;
+}

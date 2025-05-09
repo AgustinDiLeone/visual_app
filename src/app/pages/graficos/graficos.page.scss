@@ -1,0 +1,11 @@
+.fondo {
+  --background: rgb(178, 120, 120); /* Establece el color de fondo en RGB */
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-container {
+  margin-top: 20px;
+}

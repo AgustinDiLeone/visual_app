@@ -19,6 +19,7 @@
       <span class="like-icon">
         {{ img.likes.includes(usuarioActual) ? '❤️' : '🤍' }}
       </span>
+      <div class="image-text">{{ img.fecha | date:'dd/MM/yyyy HH:mm' }}</div>
     </div>
   </div>
 </ion-content>

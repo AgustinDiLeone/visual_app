@@ -1,11 +1,21 @@
 .fondo {
-  --background: rgb(178, 120, 120); /* Establece el color de fondo en RGB */
+  --background: rgb(178, 120, 120);
   padding: 0;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .image-container {
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Para ocupar todo el espacio vertical */
+  width: 100%; /* Por si querés centrar horizontalmente también */
+}
+
+canvas {
+  max-width: 90vw; /* Escala el gráfico si es necesario */
+  max-height: 80vh;
 }

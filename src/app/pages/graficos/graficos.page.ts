@@ -23,6 +23,7 @@ import {
   Legend,
   Tooltip,
 } from 'chart.js';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 Chart.register(
   PieController,
@@ -58,7 +59,8 @@ export class GraficosPage implements OnInit {
     private route: ActivatedRoute,
     private supabase: AuthService,
     private alert: AlertaService,
-    private router: Router
+    private router: Router,
+    private spinner: SpinnerService
   ) {}
 
   ngOnInit(): void {}
@@ -123,7 +125,7 @@ export class GraficosPage implements OnInit {
           legend: {
             position: 'bottom',
             labels: {
-              color: 'white', // Letras blancas en la leyenda
+              color: 'black', // Letras blancas en la leyenda
               font: {
                 weight: 'bold', // Negrita en la leyenda
               },
@@ -132,7 +134,7 @@ export class GraficosPage implements OnInit {
           title: {
             display: true,
             text: 'Cosas ' + this.tipo.toUpperCase(),
-            color: 'white', // Título en blanco
+            color: 'black', // Título en blanco
             font: {
               weight: 'bold', // Título en negrita
               size: 18, // Tamaño de la fuente
@@ -180,7 +182,7 @@ export class GraficosPage implements OnInit {
           legend: {
             display: false,
             labels: {
-              color: 'white',
+              color: 'black',
               font: {
                 weight: 'bold',
               },
@@ -189,7 +191,7 @@ export class GraficosPage implements OnInit {
           title: {
             display: true,
             text: 'Cosas ' + this.tipo.toUpperCase(),
-            color: 'white',
+            color: 'black',
             font: {
               weight: 'bold',
               size: 18,
@@ -208,7 +210,7 @@ export class GraficosPage implements OnInit {
           x: {
             beginAtZero: true,
             ticks: {
-              color: 'white',
+              color: 'black',
               font: {
                 weight: 'bold',
               },
@@ -221,7 +223,7 @@ export class GraficosPage implements OnInit {
           },
           y: {
             ticks: {
-              color: 'white',
+              color: 'black',
               font: {
                 weight: 'bold',
               },
@@ -248,6 +250,7 @@ export class GraficosPage implements OnInit {
       const selectedImageUrl = urls[index]; // Obtenemos la URL de la imagen seleccionada
       const selectedImageName = labels[index]; // Obtenemos el nombre de la imagen
 
+      this.spinner.mostrar();
       // Navegamos al componente que muestra la imagen
       this.router.navigate(['/imagen-detalle'], {
         queryParams: {

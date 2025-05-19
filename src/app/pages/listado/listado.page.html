@@ -18,6 +18,7 @@
       *ngFor="let img of imagenes; let i = index"
       class="image-item"
       [class.active]="i === currentIndex"
+      (click)="handleDoubleTap(img)"
     >
       <div class="image-text">{{ img.nombre }} - ❤️ {{ img.likes.length }}</div>
       <img [src]="img.url" alt="{{ img.nombre }}" class="image" />

@@ -7,19 +7,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content
+  class="container"
+  (touchstart)="onTouchStart($event)"
+  (touchend)="onTouchEnd($event)"
+  [scrollY]="false"
+>
   <div class="image-container">
     <div
-      *ngFor="let img of imagenes"
+      *ngFor="let img of imagenes; let i = index"
       class="image-item"
-      (click)="handleDoubleTap(img)"
+      [class.active]="i === currentIndex"
     >
       <div class="image-text">{{ img.nombre }} - ❤️ {{ img.likes.length }}</div>
       <img [src]="img.url" alt="{{ img.nombre }}" class="image" />
       <span class="like-icon">
         {{ img.likes.includes(usuarioActual) ? '❤️' : '🤍' }}
       </span>
-      <div class="image-text">{{ img.fecha | date:'dd/MM/yyyy HH:mm' }}</div>
+      <div class="image-text">{{ img.fecha | date: 'dd/MM/yyyy HH:mm' }}</div>
     </div>
   </div>
 </ion-content>

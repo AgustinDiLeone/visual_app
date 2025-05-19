@@ -32,6 +32,41 @@ import { SpinnerService } from 'src/app/services/spinner.service';
   ],
 })
 export class ListadoPage implements OnInit {
+  //Deslizar
+  currentIndex: number = 0;
+  touchStartY: number = 0;
+  touchEndY: number = 0;
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartY = event.changedTouches[0].clientY;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndY = event.changedTouches[0].clientY;
+    this.handleSwipe();
+  }
+
+  handleSwipe() {
+    const delta = this.touchStartY - this.touchEndY;
+    const threshold = 50;
+
+    if (delta > threshold) {
+      // Deslizó hacia arriba
+      if (this.currentIndex < this.imagenes.length - 1) {
+        this.currentIndex++;
+      } else {
+        this.alert.mostrar('Ya estás en la última imagen.', 'info', 1500);
+      }
+    } else if (delta < -threshold) {
+      // Deslizó hacia abajo
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+      } else {
+        this.alert.mostrar('Ya estás en la primera imagen.', 'info', 1500);
+      }
+    }
+  }
+  //fin
   tipo: 'linda' | 'fea' = 'linda'; // valor inicial por defecto
   imagenes: any[] = [];
   usuarioActual: any;
